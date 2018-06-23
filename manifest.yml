@@ -1,0 +1,12 @@
+applications:
+- name: configserverdemoapp
+  memory: 700M
+  path: /target/config-server-0.0.1-SNAPSHOT.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  timeout: 60
+#  management.security.enabled: false
+#  security.basic.enabled: false
+  services:
+  - ConfigServerTile
+  env:
+    spring.profiles.active: cloud
